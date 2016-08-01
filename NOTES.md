@@ -1,6 +1,12 @@
 ### Lecture notes
 
 1. integrate basic theme. this is a stylized app, so get the asset pipeline set up first
+run server
+/ - see a stubbed out, non-dynamic, page with theme
+
+
+
+
 
 think about narrative of app:
 2. Users create lists. Add item to those lists. Navigate many lists and see each list items.
@@ -16,8 +22,12 @@ THINK OF BASE TO START. don't worry about users, extra to start.
 
 3. ^^ don't worry about models yet. CRUD lists (create, retrieve, update, delete)
 
-  + create a list
+[ ] ListsController
+  #index
   + see all their lists
+  + doubling as #new action - create a list
+  / - Index all the lists...
   + show a list
 
-- just get started on this
+  + I know I need a model + controller => generate a resource
+  
