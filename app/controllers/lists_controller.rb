@@ -14,12 +14,16 @@ class ListsController < ApplicationController
   end
 
   def create
-    @list = List.new
-    @list.name = params[:list][:name]
-    @list.save
-
-    redirect_to list_path(@list)
+    @list = List.create(list_params)
+    # redirects should use a full url
+    redirect_to list_url(@list)
   end
+
+  private
+
+    def list_params # strong params
+      params.require(:list).permit(:name)
+    end
 
 
 end

@@ -50,3 +50,5 @@ form_for(instance of activerecord ) do |f|
 generates
 
 form class="new_list" id="new_list" action="/lists"
+
+# redirects should use a full url
