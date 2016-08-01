@@ -30,4 +30,23 @@ THINK OF BASE TO START. don't worry about users, extra to start.
   + show a list
 
   + I know I need a model + controller => generate a resource
-  
+
+
+  with every new view, ask yourself:
+  Does it impact the DB?
+  Does it impact my URLS?
+  '/lists/1' => list_path(list), where list has id 1
+  'http://localhost:3000/lists/1' => list_url(list)
+
+  lists_path, new_list_path, edit_list_path
+
+
+  list/:id
+  + id is a route variable
+
+## forms are like envelope - contain address, how to get there
+
+form_for(instance of activerecord ) do |f|
+generates
+
+form class="new_list" id="new_list" action="/lists"
