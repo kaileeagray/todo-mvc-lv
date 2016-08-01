@@ -449,3 +449,117 @@ Processing by ListsController#index as HTML
 Completed 200 OK in 45ms (Views: 37.0ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/?utf8=%E2%9C%93&authenticity_token=TKERELOk8BG7MpJ%2Bw%2Bay0Ko21GDGR2LZgzv5io7dKaff9uzehmS6ZFnfdtfGvHbh52%2Fa9hr5hdNv4YpDO2GtXA%3D%3D&list%5Bname%5D=test" for ::1 at 2016-08-01 12:18:10 -0500
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.0) lib/active_record/migration.rb:572:in `check_pending!'
+activerecord (5.0.0) lib/active_record/migration.rb:548:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.0) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.0) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.0) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.0) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.1.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (63.7ms)
+Started GET "/?utf8=%E2%9C%93&authenticity_token=TKERELOk8BG7MpJ%2Bw%2Bay0Ko21GDGR2LZgzv5io7dKaff9uzehmS6ZFnfdtfGvHbh52%2Fa9hr5hdNv4YpDO2GtXA%3D%3D&list%5Bname%5D=test" for ::1 at 2016-08-01 12:18:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ListsController#index as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TKERELOk8BG7MpJ+w+ay0Ko21GDGR2LZgzv5io7dKaff9uzehmS6ZFnfdtfGvHbh52/a9hr5hdNv4YpDO2GtXA==", "list"=>{"name"=>"test"}}
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  Rendered lists/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 233ms (Views: 223.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/lists" for ::1 at 2016-08-01 12:18:43 -0500
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x2x1fzyapJ6YIht0//Bwc00MYNQCqDJm/5ZSDpJc7e5UO4ixCVru63rP/936qrRCAFVuQt4W1WwTTCHHJ+BpFQ==", "list"=>{"name"=>"test"}, "commit"=>"Create List"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (<ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"x2x1fzyapJ6YIht0//Bwc00MYNQCqDJm/5ZSDpJc7e5UO4ixCVru63rP/936qrRCAFVuQt4W1WwTTCHHJ+BpFQ==", "list"=>{"name"=>"test"}, "commit"=>"Create List", "controller"=>"lists", "action"=>"create"} permitted: false>):
+  
+app/controllers/lists_controller.rb:17:in `create'
+  Rendering /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.3ms)
+Started PUT "/__web_console/repl_sessions/5700def340a3f58fa6aa4ab850827710" for ::1 at 2016-08-01 12:19:23 -0500
+Started PUT "/__web_console/repl_sessions/5700def340a3f58fa6aa4ab850827710" for ::1 at 2016-08-01 12:19:31 -0500
+Started GET "/?utf8=%E2%9C%93&authenticity_token=TKERELOk8BG7MpJ%2Bw%2Bay0Ko21GDGR2LZgzv5io7dKaff9uzehmS6ZFnfdtfGvHbh52%2Fa9hr5hdNv4YpDO2GtXA%3D%3D&list%5Bname%5D=test" for ::1 at 2016-08-01 12:19:54 -0500
+Processing by ListsController#index as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TKERELOk8BG7MpJ+w+ay0Ko21GDGR2LZgzv5io7dKaff9uzehmS6ZFnfdtfGvHbh52/a9hr5hdNv4YpDO2GtXA==", "list"=>{"name"=>"test"}}
+  Rendering lists/index.html.erb within layouts/application
+  [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists"[0m
+  Rendered lists/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/lists" for ::1 at 2016-08-01 12:19:58 -0500
+Processing by ListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5dL8gDnglXN1f4FJnljnUIYmpQxTqtUy9/e4N7LSvpiGwgNBLKQTSkuh34F0nyACayDcXdP9UPC/pm6yKWTWGQ==", "list"=>{"name"=>"way better"}, "commit"=>"Create List"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+RuntimeError (<ActionController::Parameters {"utf8"=>"✓", "authenticity_token"=>"5dL8gDnglXN1f4FJnljnUIYmpQxTqtUy9/e4N7LSvpiGwgNBLKQTSkuh34F0nyACayDcXdP9UPC/pm6yKWTWGQ==", "list"=>{"name"=>"way better"}, "commit"=>"Create List", "controller"=>"lists", "action"=>"create"} permitted: false>):
+  
+app/controllers/lists_controller.rb:17:in `create'
+  Rendering /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/kaileegray/.rvm/gems/ruby-2.2.3/gems/actionpack-5.0.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.2ms)
+  [1m[35m (1.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (5.8ms)[0m  [1m[32mINSERT INTO "lists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Shopping List"], ["created_at", 2016-08-01 17:20:11 UTC], ["updated_at", 2016-08-01 17:20:11 UTC]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
