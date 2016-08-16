@@ -1,5 +1,8 @@
-### Lecture 2 notes
 we want views to be declarative - no logic
+## step 8: users have lists and can only see their lists
+
+## step 7: user sign up and login
+
 ## Final Step 6: Delete items from list
 
 ## refactor: Start using partials in list show

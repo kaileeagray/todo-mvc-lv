@@ -1,3 +1,20 @@
+### DELETE action
+  + need a new button or link to Delete
+  + hit some URL -- RESTful conventions
+    we need to hit DELETE /lists/:list_id/items/:id
+      items#destroy
+    we get this through routes
+      resources :lists do
+        resources :items
+      end
+  + how do we trigger a delete request  
+      browsers only support get, put
+      
+  + controller action to process deleting
+  - think about db, urls
+    no changes to db
+    but need to think about urls
+
 ### refactor, build helper for content_tag_for :li, item, :class => li_class_for_item(item) do
   + li_for_item
 
