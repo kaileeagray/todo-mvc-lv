@@ -1,7 +1,38 @@
 ### Lecture 2 notes
+## Step 6: Delete items from list
+
+## suppose list, item exists and has id in db
+  - through form_for([list, item]) rails knows we want to go to the edit page and creates a patch request
+  
+
+
+## debugging magic lessons:
+  <%raise item.inspect if item.id.nil?%>
+    + when we start the list show page, we generate a new, nil list item
+    + so when we iterate through list.items, we hit that nil list item
+    + we don't need to wrap the new item structure to list for form - we can do that after submission
+    + change @item = List.items.build to @item = Item.new in lists_controller
+##  rake routes | grep items
+PATCH  /lists/:list_id/items/:id(.:format)      items#update
+  url: list_item_path(@list, item)
+##  // ♥rails g migration AddStatusToItems status:integer
+    Add*Field*To*Table* *field*:*datatype*
+    but! default status should be 0
 
 ## Step 5: NEXT! Add a state to mark complete, incomplete!
-## Step 6: Delete items from list
+  + mark items
+  + get working without js, ajax -- then add that layer
+  + what urls do you need?
+    - new forms for updating the status of an item => new URL
+      /lists/1/items
+        PUTS/PATCH to lists/1/items/1 -- update item 1 in list 1
+        PUTS/PATCH to lists/:list_id/items/:id
+
+  + how will my db change
+    - item being complete or incomplete requires data
+  + I need the checkboxes from todmvc.com
+
+
 
 ### INSTANCE VARIABLES ONLY PERSIST THROUGH ONE request
 ### ActiveRecord only adds errors when you try to save or validate an INSTANCE

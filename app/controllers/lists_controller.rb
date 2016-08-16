@@ -11,7 +11,7 @@ class ListsController < ApplicationController
     # params has all the data passed by a user
     # lists/:id - reading from URL
     @list = List.find(params[:id])
-    @item = @list.items.build
+    @item = Item.new
   end
 
   def create
@@ -24,7 +24,7 @@ class ListsController < ApplicationController
       # if there is an error, @list will now hold the list that was not successfully created
       # since we used render, we did not create a request
       # so @list is still avail with errors
-      
+
       render :index
     end
   end

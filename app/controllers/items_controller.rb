@@ -8,9 +8,17 @@ class ItemsController < ApplicationController
       render "lists/show"
     end
   end
+  # PATCH - /lists/:list_id/items/:id
+    def update
+      raise params.inspect
+      @item = Item.find(params[:id])
+      @item.update(item_params)
 
-  private
-    def item_params
-      params.require(:item).permit(:description)
+      redirect_to list_path(@item.list)
     end
+
+    private
+      def item_params
+        params.require(:item).permit(:description, :status)
+      end
 end
