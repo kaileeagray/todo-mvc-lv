@@ -1,6 +1,7 @@
 ### Lecture 2 notes
 
-
+## Step 5: NEXT! Add a state to mark complete, incomplete!
+## Step 6: Delete items from list
 
 ### INSTANCE VARIABLES ONLY PERSIST THROUGH ONE request
 ### ActiveRecord only adds errors when you try to save or validate an INSTANCE
