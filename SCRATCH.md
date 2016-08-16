@@ -1,3 +1,11 @@
+### refactor, build helper for content_tag_for :li, item, :class => li_class_for_item(item) do
+  + li_for_item
+
+### <%=render :collection => @list.items, :partial => "items/item_li", :as => :item%>
+if your partial was "items/item" you could remove as: :item
+or you can rename local variables to item_li to remove :as => :item
+
+
 ## add checkbox HTML from todomvc
 + add to view:
   <input class="toggle type="checkbox">

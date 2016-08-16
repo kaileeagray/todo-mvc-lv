@@ -1,10 +1,11 @@
 ### Lecture 2 notes
-## Step 6: Delete items from list
+we want views to be declarative - no logic
+## Final Step 6: Delete items from list
+
+## refactor: Start using partials in list show
 
 ## suppose list, item exists and has id in db
   - through form_for([list, item]) rails knows we want to go to the edit page and creates a patch request
-  
-
 
 ## debugging magic lessons:
   <%raise item.inspect if item.id.nil?%>
