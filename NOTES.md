@@ -1,3 +1,21 @@
+adding authentication -- todo mvc
+
+- authorization means: can the user do what they want to do
+db:
+- user model, email
+
+urls:
+- get '/users/new' users#new
+  form
+- post '/users' users#create 
+  create the user in the db
+
+- get '/login'
+  form
+- post '/sessions'
+  "log the user in"
+
+
 we want views to be declarative - no logic
 ## step 8: users have lists and can only see their lists
 
