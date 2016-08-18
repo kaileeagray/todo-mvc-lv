@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     #only call db once instead of each time
-    @current_user ||= User.find(session[:id]) if session[:id]
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
   # methods built in controllers do not go to ActionView part of code
   helper_method :current_user
