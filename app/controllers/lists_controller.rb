@@ -3,6 +3,7 @@ class ListsController < ApplicationController
   def index
     @list = List.new
     @lists = List.all
+    
     # render 'list/index.html.erb'
     # raise @lists.inspect #was the controller able to get the lists
   end
