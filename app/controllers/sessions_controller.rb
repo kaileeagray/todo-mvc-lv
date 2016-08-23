@@ -5,28 +5,12 @@ class SessionsController < ApplicationController
   def create
     @list = List.new
     @lists = List.all
-    if auth
+    if auth = request.env["omniauth.auth"]
       #log in via OAuth
-      # my github email is nil, but I had a nickname
-      # facebook has name, not nickname -- in case an email was nil
-      oauth_email = auth["info"]["email"] || auth["info"]["nickname"] || auth["info"]["name"]
-      #existing user
-      if user = User.find_by(:email => oauth_email)
-        session[:user_id] = user.id
-        @auth = auth
-        render '/lists/index'
-      else
-        #new user
-        user = User.new(:email => oauth_email, :password => SecureRandom.hex)
-        if user.save
-          session[:user_id] = user.id
-          @auth = auth
-          render '/lists/index'
-        else
-          redirect_to '/login'
-        end
-      end
-
+      #@user = User.from_omniauth(auth)
+      @user = User.find_or_create_by_omniauth(auth)
+      session[:user_id] = @user.id
+      redirect_to root_path
     else
       #Normal login with username and password
       user = User.find_or_create_by(:email => params[:email])
@@ -39,13 +23,8 @@ class SessionsController < ApplicationController
     end
   end
 
-    def auth
-      request.env['omniauth.auth']
-    end
-
   def destroy
     reset_session
     redirect_to login_path
   end
-  helper_method :auth
 end

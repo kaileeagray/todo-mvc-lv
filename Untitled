@@ -1,0 +1,19 @@
+OAUTH2 Flow
+
+1. user goes to /auth/github
+2. omniauth redirects to github -- providing github with key and secret
+    identifying my application. lets github know which of the applications that use
+    Github the user is trying to log into
+3. user logs in with GitHub
+4. github redirects them back to my application (callback URL)
+    provides app with a secret code that reps user
+    ** does not have user data -- just secret code
+5. app sends secret code back to github
+6. github confirms code came from github and that my app recieved it
+7. github sends me back the user's data
+
+2 step handshake -- I confirm I talk to github, github confirms not hacked
+
+8. check if user exists -- if so log in
+9. otherwise create user based on their email and log them in
+## MODELS SHOULD NEVER KNOW ABOUT HTTP OR REQUESTS
