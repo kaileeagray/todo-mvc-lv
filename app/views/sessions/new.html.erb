@@ -1,16 +1,16 @@
-<section class="todoapp">
-  <header class="header">
-    <h1>login!</h1>
-    <%=form_tag(sessions_path) do%>
-      <%=text_field_tag :email, '', :class => "new-todo", :placeholder => "login with your email"%>
-      <%=text_field_tag :password, '', :class => "new-todo", :placeholder => "and password"%>
-      <%=submit_tag "login"%>
-    <%end%>
-    <%=link_to "Login via GitHub", "/auth/github"%> <br>
-    <%=link_to "Login via Facebook", "/auth/facebook"%>
+<header id="header">
+  <h1>Login</h1>
 
-  </header>
-  <footer class="footer">
-  </footer>
-</section>
-<!--  -->
+  <%= form_tag(sessions_path) do %>
+    <input type="text" id="new-todo" name="email" placeholder="Your Email" />
+
+    <input type="password" id="new-todo" name="password" placeholder="Your Password" />
+
+    <button type="submit">
+  <% end %>
+</header>
+
+<footer id="footer">
+  <%= link_to "Login via Github", '/auth/github' %>
+  <%=link_to "Login via Facebook", "/auth/facebook"%>
+</footer>

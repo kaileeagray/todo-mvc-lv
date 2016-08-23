@@ -12,6 +12,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <section id="todoapp">
+      <p style="text-align: center; font-size: 14px"><%= notice %></p>
+
+      <%= yield %>
+    </section>
+    <footer id="info">
+      <p>Part of <a href="http://todomvc.com">TodoMVC</a></p>
+    </footer>
   </body>
 </html>

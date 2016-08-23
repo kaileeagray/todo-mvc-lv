@@ -1,23 +1,55 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
-  
-  def authentication_required
-    if !logged_in?
-      redirect_to login_path
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery({:with => :exception})
+
+  before_action :login_required
+
+  private
+    def can_current_user?(action, object)
+      # action == :view, :destroy, :edit
+      # object == @list
+      # current_user == #<User>
+
+      # The first thing I want to do is delegate to a model.
+      # current_user.can?(:view, @list)
+      # current_user.can?(:view, @item)
+
+      # push logic into models -- delegate to a model
+      # Users shouldn't be monoliths - God Objects
+      # users responsible for passwords, logging in and that's it
+
+
+      #@list.viewable_by?(current_user)
+      #@item.destroyabole_by?(current_user)
+
+      object.send("#{action}able_by?", current_user) #=> Dynamic Dispatch
+
+
+
+      # who has the answer to this question?
+      # somehow from our controller, with only access to the user and the object
+      # we must end up on a shared_list
     end
-  end
 
-  def logged_in?
-    !!current_user
-  end
 
-  def current_user
-    #only call db once instead of each time
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
-  # methods built in controllers do not go to ActionView part of code
-  helper_method :current_user
-  # you can call this if you use this ^^
+    def login(user)
+      session[:user_id] = user.id # Logging them in as a user.
+    end
+
+    def login_required
+      if !logged_in?
+        redirect_to login_path, :notice => "Please login first!"
+      end
+    end
+
+    def logged_in?
+      !!current_user
+    end
+    helper_method :logged_in?
+
+    def current_user
+      @current_user ||= User.find(session[:user_id]) if session[:user_id].present?
+    end
+    helper_method :current_user
 end
-
-# loads all helper methods

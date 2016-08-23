@@ -1,5 +1,7 @@
-OAUTH2 Flow
+dev
 
+OAUTH2 Flow
+## bash variables exist for one execution -- use figoro or dotenv
 1. user goes to /auth/github
 2. omniauth redirects to github -- providing github with key and secret
     identifying my application. lets github know which of the applications that use
@@ -17,3 +19,5 @@ OAUTH2 Flow
 8. check if user exists -- if so log in
 9. otherwise create user based on their email and log them in
 ## MODELS SHOULD NEVER KNOW ABOUT HTTP OR REQUESTS
+
+## THINK ABOUT "MAIN CHARACTERS" OR MODELS -- as few as possible

@@ -1,40 +1,43 @@
 class ListsController < ApplicationController
-  before_action :authentication_required
-  def index
-    @list = List.new
-    @lists = List.all
-    
-    # render 'list/index.html.erb'
-    # raise @lists.inspect #was the controller able to get the lists
-  end
+  # skip_before_action :login_required, :only => [:index]
 
   def show
-    # params has all the data passed by a user
-    # lists/:id - reading from URL
     @list = List.find(params[:id])
-    @item = Item.new
+    if !can_current_user?(:view, @list)
+      redirect_to root_path, :notice => "Can't find that..."
+    end
+
+  end
+
+  def index
+    @lists = current_user.lists
+    @list = List.new
+  end
+
+  def new
+    @list = List.new
+    @list.items.build
   end
 
   def create
     @list = List.new(list_params)
-    # redirects should use a full url
-    if @list.save
-      redirect_to list_url(@list)
-    else
-      @lists = List.all
-      # if there is an error, @list will now hold the list that was not successfully created
-      # since we used render, we did not create a request
-      # so @list is still avail with errors
 
-      render :index
+    if @list.save
+      redirect_to @list
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @list = List.find(params[:id])
+    if !can_current_user?(:edit, @list)
+      redirect_to root_path, :notice => "Can't find that..."
     end
   end
 
   private
-
-    def list_params # strong params
-      params.require(:list).permit(:name)
+    def list_params
+      params.require(:list).permit(:name, :items_attributes => [:description, :priority])
     end
-
-
 end
