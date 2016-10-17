@@ -27,7 +27,7 @@ class SharedList < ApplicationRecord
 
   permissable :view, :edit, :destroy
 
-  ## can can abstracts this away! 
+  ## cancancan abstracts this away! 
 
 
 end
